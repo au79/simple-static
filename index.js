@@ -13,15 +13,21 @@ app.get('/', (req, res) => {
 });
 
 app.post('/success', function (req, res) {
-    res.json(successFile);
+    setTimeout(() => {
+        res.json(successFile);
+    }, 1000);
 })
 
 app.post('/empty', function (req, res) {
-    res.json(emptyFile);
+    setTimeout(() => {
+        res.json(emptyFile);
+    }, 1000);
 })
 
 app.post('/error', function (req, res) {
-    res.status(500).send();
+    setTimeout(() => {
+        res.status(500).send();
+}, 1000);
 })
 
 app.listen(3000, () => console.log('Gator app listening on port 3000!'));
