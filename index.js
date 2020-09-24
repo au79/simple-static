@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 const successFile = require('./public/success.json');
 const emptyFile = require('./public/empty.json');
 
 app.use(express.static('public'));
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('An alligator approaches!');
