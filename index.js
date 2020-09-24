@@ -30,4 +30,17 @@ app.post('/error', function (req, res) {
 }, 1000);
 })
 
+app.post('/random', function (req, res) {
+    setTimeout(() => {
+        const rand = Math.random();
+
+        if (rand< 0.2) {
+            res.status(500).send();
+        } else {
+            res.json(successFile);
+        }
+    }, 1000);
+})
+
+
 app.listen(3000, () => console.log('Gator app listening on port 3000!'));
